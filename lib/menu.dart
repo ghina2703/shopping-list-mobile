@@ -9,6 +9,9 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Shopping List',
+          style: TextStyle(
+            color: Colors.white, // Mengatur warna teks menjadi putih
+          ),
         ),
       ),
       body: SingleChildScrollView(
