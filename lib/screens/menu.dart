@@ -17,6 +17,14 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
+  void navigateToProductPage(BuildContext context) {
+    // Route menu ke halaman produk
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ProductPage()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,13 +66,8 @@ class MyHomePage extends StatelessWidget {
                   return ShopCard(
                     item,
                     onItemTap: () {
-                      if (item.name == "Daftar Produk") {
-                        // TODO: navigate to ProductPage
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ProductPage()),
-                        );
+                      if (item.name == "Lihat Produk") {
+                        navigateToProductPage(context);
                       } else if (item.name == "Tambah Produk") {
                         navigateToShopFormPage(context);
                       }
