@@ -3,6 +3,7 @@ import 'package:shopping_list/screens/list_product.dart';
 import 'package:shopping_list/widgets/left_drawer.dart';
 import 'package:shopping_list/screens/shoplist_form.dart';
 import 'package:shopping_list/widgets/shop_card.dart';
+import 'package:shopping_list/screens/item_list_page.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -21,7 +22,8 @@ class MyHomePage extends StatelessWidget {
     // Route menu ke halaman produk
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ProductPage()),
+      // MaterialPageRoute(builder: (context) => ProductPage()),
+      MaterialPageRoute(builder: (context) => ItemsListPage()),
     );
   }
 
@@ -66,7 +68,7 @@ class MyHomePage extends StatelessWidget {
                   return ShopCard(
                     item,
                     onItemTap: () {
-                      if (item.name == "Lihat Produk") {
+                      if (item.name == "Lihat Mobile Produk") {
                         navigateToProductPage(context);
                       } else if (item.name == "Tambah Produk") {
                         navigateToShopFormPage(context);

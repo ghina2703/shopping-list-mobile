@@ -1,14 +1,14 @@
-import 'package:shopping_list/screens/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_list/screens/menu.dart';
 
 void main() {
   runApp(const LoginApp());
 }
 
 class LoginApp extends StatelessWidget {
-  const LoginApp({super.key});
+  const LoginApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class LoginApp extends StatelessWidget {
 }
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key? key});
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -65,16 +65,14 @@ class _LoginPageState extends State<LoginPage> {
                 String username = _usernameController.text;
                 String password = _passwordController.text;
 
-                // Cek kredensial
-                // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
-                // Untuk menyambungkan Android emulator dengan Django pada localhost,
-                // gunakan URL http://10.0.2.2/
-                final response =
-                    // await request.login("http://10.0.2.2:8000/auth/login/", {
-                    await request.login("http://127.0.0.1:8000/auth/login/", {
-                  'username': username,
-                  'password': password,
-                });
+                // TODO: Update the login URL
+                final response = await request.login(
+                  "https://ghina-nabila21-tutorial.pbp.cs.ui.ac.id/auth/login/",
+                  {
+                    'username': username,
+                    'password': password,
+                  },
+                );
 
                 if (request.loggedIn) {
                   String message = response['message'];

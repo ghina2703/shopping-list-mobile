@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
+import 'package:shopping_list/screens/item_list_page.dart';
 import 'package:shopping_list/screens/list_product.dart';
 import 'package:shopping_list/screens/login.dart';
 import 'package:shopping_list/screens/shoplist_form.dart';
@@ -13,7 +14,7 @@ class ShopItem {
 }
 
 final List<ShopItem> items = [
-  ShopItem("Lihat Produk", Icons.checklist),
+  ShopItem("Lihat Produk Mobile", Icons.checklist),
   ShopItem("Tambah Produk", Icons.add_shopping_cart),
   ShopItem("Logout", Icons.logout),
 ];
@@ -36,12 +37,14 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
-          if (item.name == "Lihat Produk") {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const ShopFormPage()));
+          if (item.name == "Lihat Produk Mobile") {
+            // Navigate to the ItemsListPage when "Lihat Produk" is tapped
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const ProductPage(),
+            ));
           } else if (item.name == "Logout") {
-            final response =
-                await request.logout("http://127.0.0.1:8000/auth/logout/");
+            final response = await request.logout(
+                "https://ghina-nabila21-tutorial.pbp.cs.ui.ac.id/auth/logout/");
             String message = response["message"];
             if (response['status']) {
               String uname = response["username"];
