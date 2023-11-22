@@ -1,3 +1,11 @@
+**Tautan Build Badge:**\
+[![Build status](https://build.appcenter.ms/v0.1/apps/f2b5cda9-92b4-4edf-b827-c3925af16de0/branches/main/badge)](https://appcenter.ms)
+
+
+**Tautan Publik:** \
+https://install.appcenter.ms/orgs/pbp_shop/apps/shopping-list/distribution_groups/public
+
+
 # shopping_list
 
 A new Flutter project.
