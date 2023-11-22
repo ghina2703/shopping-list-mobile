@@ -14,7 +14,7 @@ class ShopItem {
 }
 
 final List<ShopItem> items = [
-  ShopItem("Lihat Produk Mobile", Icons.checklist),
+  ShopItem("Lihat Produk Web", Icons.checklist),
   ShopItem("Tambah Produk", Icons.add_shopping_cart),
   ShopItem("Logout", Icons.logout),
 ];
@@ -37,7 +37,7 @@ class ShopCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(
                 content: Text("Kamu telah menekan tombol ${item.name}!")));
-          if (item.name == "Lihat Produk Mobile") {
+          if (item.name == "Lihat Produk Web") {
             // Navigate to the ItemsListPage when "Lihat Produk" is tapped
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => const ProductPage(),

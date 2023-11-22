@@ -68,7 +68,7 @@ class MyHomePage extends StatelessWidget {
                   return ShopCard(
                     item,
                     onItemTap: () {
-                      if (item.name == "Lihat Mobile Produk") {
+                      if (item.name == "Lihat Web Produk") {
                         navigateToProductPage(context);
                       } else if (item.name == "Tambah Produk") {
                         navigateToShopFormPage(context);
