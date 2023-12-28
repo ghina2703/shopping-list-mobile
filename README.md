@@ -1,3 +1,8 @@
+Nama: Ghina Nabila Gunawan\
+NPM: 2206825914\
+Kelas: PBP B\
+Kode Asdos: ZYN
+
 **Tautan Build Badge:**\
 [![Build status](https://build.appcenter.ms/v0.1/apps/f2b5cda9-92b4-4edf-b827-c3925af16de0/branches/main/badge)](https://appcenter.ms)
 
